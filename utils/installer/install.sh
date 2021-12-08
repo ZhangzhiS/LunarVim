@@ -284,7 +284,7 @@ function install_packer() {
   if [ -e "$LUNARVIM_PACK_DIR/packer/start/packer.nvim" ]; then
     msg "Packer already installed"
   else
-    if ! git clone --depth 1 "https://github.com/wbthomason/packer.nvim" \
+    if ! git clone --depth 1 "https://ghproxy.com/https://github.com/wbthomason/packer.nvim" \
       "$LUNARVIM_PACK_DIR/packer/start/packer.nvim"; then
       msg "Failed to clone Packer. Installation failed."
       exit 1
@@ -295,7 +295,7 @@ function install_packer() {
 function clone_lvim() {
   msg "Cloning LunarVim configuration"
   if ! git clone --branch "$LV_BRANCH" \
-    --depth 1 "https://github.com/${LV_REMOTE}" "$LUNARVIM_RUNTIME_DIR/lvim"; then
+    --depth 1 "https://ghproxy.com/https://github.com/${LV_REMOTE}" "$LUNARVIM_RUNTIME_DIR/lvim"; then
     echo "Failed to clone repository. Installation failed."
     exit 1
   fi
